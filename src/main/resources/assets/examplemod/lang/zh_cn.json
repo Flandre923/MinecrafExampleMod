@@ -1,0 +1,10 @@
+{
+  "item.examplemod.example_item": "例子物品",
+  "item.examplemod.example_food": "例子食物",
+  "item.examplemod.example_sword": "例子剑",
+  "item.examplemod.example_axe": "例子斧头",
+
+  "itemGroup.example_group": " 例子分类",
+
+  "example.simple.gui": "第一个界面"
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "examplemod:example_item"
+    }
+  },
+  "result": {
+    "item": "examplemod:example_block",
+    "count": 9
+  }
+}

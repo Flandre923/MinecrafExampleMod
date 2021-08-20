@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "examplemod:example_item"
+    }
+  ],
+  "result": {
+    "item": "minecraft:wheat"
+  }
+}
