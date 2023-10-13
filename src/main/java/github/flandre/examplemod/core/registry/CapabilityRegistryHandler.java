@@ -12,7 +12,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 import javax.annotation.Nullable;
 
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class CapabilityRegistryHandler {
 
     @SubscribeEvent
