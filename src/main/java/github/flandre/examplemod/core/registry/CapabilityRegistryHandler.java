@@ -12,9 +12,24 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 import javax.annotation.Nullable;
 
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class CapabilityRegistryHandler {
 
+    public static  <T extends INBTSerializable<CompoundNBT>> void registryCapability(Class<T> type, T instance){
+        CapabilityManager.INSTANCE.register(type,
+                new Capability.IStorage<T>() {
+                    @Nullable
+                    @Override
+                    public INBT writeNBT(Capability<T> capability, T instance, Direction side) {
+                        return instance.serializeNBT();
+                    }
+                    @Override
+                    public void readNBT(Capability<T> capability, T instance, Direction side, INBT nbt) {
+                        instance.deserializeNBT((CompoundNBT) nbt);
+                    }
+                }, ()->instance);
+    }
+    
     @SubscribeEvent
     public static void onSetupEvent(FMLCommonSetupEvent event){
         event.enqueueWork(()->{
