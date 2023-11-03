@@ -45,6 +45,9 @@ public class ExampleGuiBlock extends Block {
             if(tileEntity instanceof ExampleGuiTileEntity){
                 NetworkHooks.openGui((ServerPlayerEntity) player,(ExampleGuiTileEntity) tileEntity,pos);
             }
+        }else{
+            // 客户端需要返回SUCCESS, 否则会执行玩家手持物品的右键操作
+            return ActionResultType.SUCCESS;
         }
         return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
     }
